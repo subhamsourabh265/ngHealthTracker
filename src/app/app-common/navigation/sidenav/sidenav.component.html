@@ -1,0 +1,26 @@
+<mat-nav-list>
+  <mat-list-item (click)="onSideNavClick()">
+    <a routerLink="/signup" fxLayout>
+      <mat-icon>face</mat-icon>
+      <span class="nav-caption">Signup</span>
+    </a>
+  </mat-list-item>
+  <mat-list-item (click)="onSideNavClick()">
+    <a routerLink="/login" fxLayout>
+      <mat-icon>input</mat-icon>
+      <span class="nav-caption">Login</span>
+    </a>
+  </mat-list-item>
+  <mat-list-item (click)="onSideNavClick()">
+    <a routerLink="/training" fxLayout>
+      <mat-icon>fitness_center</mat-icon>
+      <span class="nav-caption">Training</span>
+    </a>
+  </mat-list-item>
+  <mat-list-item (click)="onSideNavClick()">
+    <a mat-icon-button fxLayout>
+      <mat-icon>eject</mat-icon>
+      <span class="nav-caption">Logout</span>
+    </a>
+  </mat-list-item>
+</mat-nav-list>

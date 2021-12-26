@@ -1,0 +1,16 @@
+@import '../../app-common/styles/media';
+
+.welcome {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns:  1fr 1fr 1fr;
+  grid-gap: 20px;
+  gap: 30px;
+  justify-content: center;
+  padding: 50px;
+  margin-top: 70px;
+  background: #e0e2f9;
+  @include respondTo(mobile){
+    grid-template-columns: 1fr;
+  }
+}

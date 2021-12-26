@@ -1,0 +1,11 @@
+<section class="current-training">
+  <mat-progress-spinner mode="determinate" [value]='spinnerValue'></mat-progress-spinner>
+  <h1>{{spinnerValue}} %</h1>
+  <p>Keep going, you can do better!</p>
+  <button
+    mat-raised-button color="warning"
+    class="stop-button"
+    (click)="stopSpinner()">
+    Stop
+  </button>
+</section>

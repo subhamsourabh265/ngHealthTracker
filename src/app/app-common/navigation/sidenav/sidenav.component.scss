@@ -1,0 +1,19 @@
+a {
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+a:hover, a:active {
+  color: lightgray !important;
+}
+
+.nav-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 10px;
+}
