@@ -12,9 +12,10 @@ import { CurrentTrainingComponent } from './components/training/current-training
 import { NewTrainingComponent } from './components/training/new-training/new-training.component';
 import { PastTrainingComponent } from './components/training/past-training/past-training.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './app-common/navigation/header/header.component';
 import { SidenavComponent } from './app-common/navigation/sidenav/sidenav.component';
+import { CancelDialogComponent } from './components/training/current-training/cancel-dialog/cancel-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +28,16 @@ import { SidenavComponent } from './app-common/navigation/sidenav/sidenav.compon
     PastTrainingComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    CancelDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CancelDialogComponent } from './cancel-dialog/cancel-dialog.component';
 
 @Component({
   selector: 'app-current-training',
@@ -7,15 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentTrainingComponent implements OnInit {
 
+  @Output() trainingExit: EventEmitter<void> = new EventEmitter<void>();
   spinnerValue = 0;
   timeOut: any;
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.startOrResume();
+  }
+
+  startOrResume() {
     this.timeOut = setInterval(() => {
       if(this.spinnerValue>=100) {
         clearInterval(this.timeOut);
-        this.spinnerValue = 20;
       }
       this.spinnerValue+=1;
     },100);
@@ -23,6 +29,19 @@ export class CurrentTrainingComponent implements OnInit {
 
   stopSpinner() {
     clearInterval(this.timeOut);
+    const dialogRef = this.dialog.open(CancelDialogComponent, {
+      data: {
+        progress: this.spinnerValue
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        this.trainingExit.emit();
+      } else {
+        this.startOrResume();
+      }
+    })
   }
 
 }
