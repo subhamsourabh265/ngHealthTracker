@@ -1,0 +1,13 @@
+.current-training {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  .stop-button {
+    width: 50px;
+    background: rgb(180, 70, 70);
+    color: #ffffff;
+  }
+}

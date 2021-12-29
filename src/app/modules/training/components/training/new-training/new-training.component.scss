@@ -1,0 +1,17 @@
+@import "/src/app/app-common/styles/media";
+.new-training {
+  display: flex;
+  justify-content: center;
+  mat-card {
+    width: 450px;
+    text-align: center;
+    @include respondTo(mobile) {
+      width: 90%;
+    }
+  }
+
+  mat-spinner {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}

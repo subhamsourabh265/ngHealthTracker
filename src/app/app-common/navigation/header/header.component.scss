@@ -3,14 +3,18 @@ a {
   color: #ffffff !important;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: lightgray !important;
 }
 
-.nav-list{
+.nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  li:last-child {
+    cursor: pointer;
+  }
 }
 
 .nav-caption {
