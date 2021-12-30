@@ -1,10 +1,13 @@
 <section class="current-training">
+  <h1>{{currentTraining.name}} in progress</h1>
   <mat-progress-spinner
     mode="determinate"
     [value]="spinnerValue"
   ></mat-progress-spinner>
   <h1>{{ spinnerValue }} %</h1>
   <p>Keep going, you can do better!</p>
+  <p>Time left: {{timeLeft}} sec</p>
+  <p>Calories burnt: {{caloriesBurnt}} cal</p>
   <button
     mat-raised-button
     color="warning"

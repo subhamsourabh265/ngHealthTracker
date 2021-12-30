@@ -16,6 +16,9 @@ export class CurrentTrainingComponent implements OnInit {
   @Output() trainingExit: EventEmitter<void> = new EventEmitter<void>();
   spinnerValue = 0;
   timeOut: any;
+  currentTraining: any;
+  timeLeft: number | any;
+  caloriesBurnt: number = 0;
   constructor(
     private dialog: MatDialog,
     private trainingService: TrainingService,
@@ -31,9 +34,12 @@ export class CurrentTrainingComponent implements OnInit {
       .select(fromTraining.getCurrentTrainings)
       .pipe(take(1))
       .subscribe((training: any) => {
+        this.currentTraining = training;
         const step = (training.duration / 100) * 1000;
         this.timeOut = setInterval(() => {
           this.spinnerValue += 1;
+          this.timeLeft = Math.floor(training.duration - training.duration / 100 * this.spinnerValue);
+          this.caloriesBurnt = Math.round(training.calories * this.spinnerValue / 100);
           if (this.spinnerValue >= 100) {
             this.trainingService.completeTraining();
             clearInterval(this.timeOut);

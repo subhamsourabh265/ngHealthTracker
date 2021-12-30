@@ -6,11 +6,15 @@ import { AuthService } from 'src/app/app-common/services/auth.service';
 import { SpinnerService } from 'src/app/app-common/services/spinner.service';
 import * as fromRoot from 'src/app/app.reducer';
 import { map } from 'rxjs/operators';
+import { slideInAnimation } from 'src/app/app-common/animations/animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  animations: [
+    slideInAnimation
+  ]
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { slideInAnimation } from 'src/app/app-common/animations/animations';
 import { AuthService } from 'src/app/app-common/services/auth.service';
 import * as fromRoot from 'src/app/app.reducer';
 
@@ -9,6 +10,9 @@ import * as fromRoot from 'src/app/app.reducer';
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
+  animations: [
+    slideInAnimation
+  ]
 })
 export class SignupComponent implements OnInit {
   maxDate: any = new Date();
