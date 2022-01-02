@@ -37,6 +37,33 @@
             "scripts": []
           },
           "configurations": {
+            "fr-FR": {
+              "aot":true,
+              "outputPath": "dist/fr-FR/",
+              "i18nFile": "src/translation/translate.fr-FR.xlf",
+              "i18nFormat": "xlf",
+              "baseHref": "/fr-FR/",
+              "i18nLocale": "fr-FR",
+              "i18nMissingTranslation": "error"
+            },
+            "en-CA": {
+              "aot":true,
+              "outputPath": "dist/en-CA/",
+              "i18nFile": "src/translation/translate.en-CA.xlf",
+              "i18nFormat": "xlf",
+              "baseHref": "/en-CA/",
+              "i18nLocale": "en-CA",
+              "i18nMissingTranslation": "error"
+            },
+            "en-US": {
+              "aot":true,
+              "outputPath": "dist/en-US/",
+              "i18nFile": "src/translation/translate.en-US.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en-US",
+              "baseHref": "/en-US/",
+              "i18nMissingTranslation": "error"
+            },
             "production": {
               "budgets": [
                 {
@@ -66,12 +93,22 @@
               "sourceMap": true,
               "namedChunks": true
             }
+
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "fr-FR": {
+              "browserTarget": "health-tracker:build:fr-FR"
+            },
+            "en-US": {
+              "browserTarget": "health-tracker:build:en-US"
+            },
+            "en-CA": {
+              "browserTarget": "thealth-tracker:build:en-CA"
+            },
             "production": {
               "browserTarget": "health-tracker:build:production"
             },

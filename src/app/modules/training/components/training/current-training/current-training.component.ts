@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, LOCALE_ID, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { TrainingService } from 'src/app/app-common/services/training.service';
@@ -19,10 +19,17 @@ export class CurrentTrainingComponent implements OnInit {
   currentTraining: any;
   timeLeft: number | any;
   caloriesBurnt: number = 0;
+  locales: any[] = [
+    { name:"French(France)", code:"fr-FR"},
+    { name:"English(US)", code:"en-US"},
+    { name:"English(Canada)", code:"en-CA"}
+  ];
+  selectedLocale: string = "en-US";
   constructor(
     private dialog: MatDialog,
     private trainingService: TrainingService,
-    private store: Store<fromTraining.State>
+    private store: Store<fromTraining.State>,
+    @Inject(LOCALE_ID) private localeId: string
   ) {}
 
   ngOnInit(): void {
@@ -64,5 +71,9 @@ export class CurrentTrainingComponent implements OnInit {
         this.startOrResume();
       }
     });
+  }
+
+  changePath(code: string){
+    location.replace(`/${code}/`);
   }
 }

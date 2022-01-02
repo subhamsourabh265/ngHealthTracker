@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './app.reducer';
+import { FooterComponent } from './app-common/navigation/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { reducers } from './app.reducer';
     WelcomeComponent,
     HeaderComponent,
     SidenavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,12 @@ import { reducers } from './app.reducer';
     AngularFireAuthModule,
     StoreModule.forRoot(reducers),
   ],
-  providers: [],
+  providers: [
+    {
+      provide:LOCALE_ID,
+      useValue:"en-US"
+      }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

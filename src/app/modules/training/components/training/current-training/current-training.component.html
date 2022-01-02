@@ -1,14 +1,29 @@
+<!-- <mat-select
+  i18n-placeholder
+  placeholder="Please select the language"
+  ngModel
+  required
+  name="locale"
+  (selectionChange)="selectedLocale = $event.value; changePath($event.value)"
+  #locale="ngModel"
+>
+  <mat-option *ngFor="let locale of locales" [value]="locale.code">
+    {{ locale.name }}
+  </mat-option>
+</mat-select> -->
+
 <section class="current-training">
-  <h1>{{currentTraining.name}} in progress</h1>
+  <h1 i18n>{{ currentTraining.name }} in progress</h1>
   <mat-progress-spinner
     mode="determinate"
     [value]="spinnerValue"
   ></mat-progress-spinner>
   <h1>{{ spinnerValue }} %</h1>
-  <p>Keep going, you can do better!</p>
-  <p>Time left: {{timeLeft}} sec</p>
-  <p>Calories burnt: {{caloriesBurnt}} cal</p>
+  <p i18n>Keep going, you can do better!</p>
+  <p i18n>Time left: {{ timeLeft }} sec</p>
+  <p i18n>Calories burnt: {{ caloriesBurnt }} cal</p>
   <button
+    i18n
     mat-raised-button
     color="warning"
     class="stop-button"

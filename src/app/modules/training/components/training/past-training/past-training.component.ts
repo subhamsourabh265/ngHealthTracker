@@ -36,6 +36,7 @@ export class PastTrainingComponent implements OnInit, AfterViewInit {
       .select(fromTraining.getFinishedTrainings)
       .subscribe((trainings: any) => {
         this.dataSource = new MatTableDataSource(trainings);
+        this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       });
     this.pastTrainingSubscription = this.trainingService

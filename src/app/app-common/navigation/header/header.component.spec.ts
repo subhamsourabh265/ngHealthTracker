@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, flushMicrotasks, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 
@@ -17,6 +17,7 @@ describe('HeaderComponent', () => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    flushMicrotasks();
   });
 
   it('should create', () => {

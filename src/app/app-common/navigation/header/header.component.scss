@@ -21,3 +21,9 @@ a:active {
   display: inline-block;
   padding-left: 10px;
 }
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}

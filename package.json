@@ -4,6 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build-localeCode:en-US": "ng build --prod --configuration=en-US",
+    "build-localeCode:fr-FR": "ng build --prod --configuration=fr-FR",
+    "build-localeCode:en-CA": "ng build --prod --configuration=en-CA",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -31,22 +34,23 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
     "@angular-devkit/build-angular": "~13.0.3",
     "@angular/cli": "~13.0.3",
     "@angular/compiler-cli": "~13.0.0",
+    "@angular/localize": "^13.0.3",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "firebase-tools": "^7.12.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.4.3",
-    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
-    "firebase-tools": "^7.12.0",
-    "fuzzy": "^0.1.3",
-    "inquirer": "^6.2.2",
-    "inquirer-autocomplete-prompt": "^1.0.1"
+    "typescript": "~4.4.3"
   }
 }

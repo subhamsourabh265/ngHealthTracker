@@ -5,9 +5,11 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <app-header (sideNavToggle)="sideNav.toggle()"></app-header>
-      <main>
+      <main class="main-content" aria-labelledby="main-content">
+        <span id="main-content" class="sr-only">Main Content</span>
         <router-outlet #outlet="outlet"></router-outlet>
       </main>
+      <app-footer></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </ng-container>
