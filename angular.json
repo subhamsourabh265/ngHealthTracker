@@ -28,17 +28,20 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "fr-FR": {
-              "aot":true,
+              "aot": true,
               "outputPath": "dist/fr-FR/",
               "i18nFile": "src/translation/translate.fr-FR.xlf",
               "i18nFormat": "xlf",
@@ -47,7 +50,7 @@
               "i18nMissingTranslation": "error"
             },
             "en-CA": {
-              "aot":true,
+              "aot": true,
               "outputPath": "dist/en-CA/",
               "i18nFile": "src/translation/translate.en-CA.xlf",
               "i18nFormat": "xlf",
@@ -56,7 +59,7 @@
               "i18nMissingTranslation": "error"
             },
             "en-US": {
-              "aot":true,
+              "aot": true,
               "outputPath": "dist/en-US/",
               "i18nFile": "src/translation/translate.en-US.xlf",
               "i18nFormat": "xlf",
@@ -93,7 +96,6 @@
               "sourceMap": true,
               "namedChunks": true
             }
-
           },
           "defaultConfiguration": "production"
         },
@@ -134,7 +136,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
@@ -142,9 +145,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "health-tracker"
+  "defaultProject": "health-tracker",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

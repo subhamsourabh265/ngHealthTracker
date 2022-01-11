@@ -1,4 +1,4 @@
-<mat-tab-group *ngIf="!(onGoingTraining$ | async)" @routeAnimations>
+<mat-tab-group *ngIf="(onGoingTraining$ | async) === false" @routeAnimations>
   <mat-tab label="New Exercise">
     <app-new-training></app-new-training>
   </mat-tab>
@@ -10,3 +10,4 @@
   *ngIf="onGoingTraining$ | async"
 >
 </app-current-training>
+<!-- <app-training *ngIf="showTrainingCount<=3"></app-training> -->

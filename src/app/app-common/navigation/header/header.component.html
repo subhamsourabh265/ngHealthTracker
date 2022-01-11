@@ -17,8 +17,8 @@
     fxLayoutAlign="flex-end"
     fxHide.xs
   >
-    <li *ngIf="!(isAuth$ | async)"><a routerLink="/auth/signup">Signup</a></li>
-    <li *ngIf="!(isAuth$ | async)"><a routerLink="/auth/login">Login</a></li>
+    <li *ngIf="(isAuth$ | async) === false"><a routerLink="/auth/signup">Signup</a></li>
+    <li *ngIf="(isAuth$ | async) === false"><a routerLink="/auth/login">Login</a></li>
     <li *ngIf="isAuth$ | async"><a routerLink="/training">Training</a></li>
     <li *ngIf="isAuth$ | async" (click)="onLogout()"><a>Logout</a></li>
   </ul>

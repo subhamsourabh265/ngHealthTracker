@@ -28,13 +28,17 @@ export class CurrentTrainingComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private trainingService: TrainingService,
-    private store: Store<fromTraining.State>,
-    @Inject(LOCALE_ID) private localeId: string
+    private store: Store<fromTraining.State>
+    // @Inject(LOCALE_ID) private localeId: string
   ) {}
 
   ngOnInit(): void {
     this.startOrResume();
   }
+
+  // startSpinner() {
+  //   this.startOrResume();
+  // }
 
   startOrResume() {
     this.store

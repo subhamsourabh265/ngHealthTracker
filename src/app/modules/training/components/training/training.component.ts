@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { TrainingService } from 'src/app/app-common/services/training.service';
 import { Store } from '@ngrx/store';
@@ -13,9 +13,22 @@ import { slideInAnimation } from 'src/app/app-common/animations/animations';
     slideInAnimation
   ]
 })
-export class TrainingComponent {
+export class TrainingComponent implements OnInit {
   onGoingTraining$: Observable<boolean> = this.store.select(
     fromTraining.getIsTraining
   );
-  constructor(private store: Store<fromTraining.State>) {}
+  showTrainingCount: number = 0;
+  constructor(
+    private store: Store<fromTraining.State>,
+    public trainingService: TrainingService,
+    private cd: ChangeDetectorRef
+  ) {}
+
+  ngOnInit(): void {
+    this.showTrainingCount = this.trainingService.showTrainingCount;
+    this.trainingService.showTrainingCount++;
+    this.cd.detectChanges();
+    console.log(this.trainingService.showTrainingCount);
+    console.log(this.showTrainingCount);
+  }
 }

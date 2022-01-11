@@ -15,6 +15,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './app.reducer';
 import { FooterComponent } from './app-common/navigation/footer/footer.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ServiceWorkerModule } from '@angular/service-worker';
+// import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,13 @@ import { FooterComponent } from './app-common/navigation/footer/footer.component
     AngularFirestoreModule,
     AngularFireAuthModule,
     StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     {

@@ -16,6 +16,7 @@ export class TrainingService {
   private currentTraining: Trainings = {} as any;
   trainingObs: Observable<any[]> | any;
   finishedTrainingsObs: Observable<any> | any;
+  showTrainingCount: number = 0;
 
   constructor(private db: AngularFirestore, private store: Store) {
     this.trainingObs = this.db

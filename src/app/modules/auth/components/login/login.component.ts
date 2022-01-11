@@ -16,7 +16,7 @@ import { slideInAnimation } from 'src/app/app-common/animations/animations';
     slideInAnimation
   ]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm: FormGroup;
   isLoading$: Observable<boolean> = this.store.select(fromRoot.getIsLoading);
 
@@ -34,8 +34,6 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
-
-  ngOnInit(): void {}
 
   get email() {
     return this.loginForm.get('email');

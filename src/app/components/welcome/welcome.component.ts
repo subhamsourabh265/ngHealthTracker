@@ -10,8 +10,10 @@ import { slideInAnimation } from 'src/app/app-common/animations/animations';
   ]
 
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent {
+
+  activityHeading: string = 'Activity';
   constructor() {}
 
-  ngOnInit(): void {}
+  // ngOnInit(): void {}
 }

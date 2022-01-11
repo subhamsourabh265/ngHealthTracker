@@ -1,11 +1,11 @@
 <mat-nav-list>
-  <mat-list-item (click)="onSideNavClick()" *ngIf="!(isAuth$ | async)">
+  <mat-list-item (click)="onSideNavClick()" *ngIf="(isAuth$ | async) === false">
     <a routerLink="/auth/signup" fxLayout>
       <mat-icon>face</mat-icon>
       <span class="nav-caption">Signup</span>
     </a>
   </mat-list-item>
-  <mat-list-item (click)="onSideNavClick()" *ngIf="!(isAuth$ | async)">
+  <mat-list-item (click)="onSideNavClick()" *ngIf="(isAuth$ | async) === false">
     <a routerLink="/auth/login" fxLayout>
       <mat-icon>input</mat-icon>
       <span class="nav-caption">Login</span>

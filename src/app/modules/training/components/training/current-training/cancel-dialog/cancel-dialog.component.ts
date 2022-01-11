@@ -6,8 +6,6 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './cancel-dialog.component.html',
   styleUrls: ['./cancel-dialog.component.scss'],
 })
-export class CancelDialogComponent implements OnInit {
+export class CancelDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public passedData: any) {}
-
-  ngOnInit(): void {}
 }

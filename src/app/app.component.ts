@@ -12,7 +12,9 @@ export class AppComponent implements OnInit {
   title = 'health-tracker';
   showDefaultTemplate: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+    console.log(document.hidden);
+  }
 
   ngOnInit(): void {
     this.authService.initAuthListener();

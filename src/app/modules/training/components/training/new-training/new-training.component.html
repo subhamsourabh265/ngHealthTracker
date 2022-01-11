@@ -36,6 +36,6 @@
         </button>
       </mat-card-actions>
     </form>
-    <mat-spinner *ngIf="!(trainings$ | async)"></mat-spinner>
+    <mat-spinner *ngIf="(trainings$ | async) === undefined || (trainings$ | async) === []"></mat-spinner>
   </mat-card>
 </section>
